@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fone_Xplorer.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="listViewStyle" TargetType="ListView">
+                <Setter Property="Margin" Value="0, 30, 0, 0"/>
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand"
+        Padding="5">
+
+
+        <ListView
+            SeparatorVisibility="None"
+            x:Name="homeListView"
+            HasUnevenRows="True"
+            Style="{StaticResource listViewStyle}"
+            ItemSelected="homeListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Padding="3"
+                            Margin="0, 5,0,5">
+
+                            <Label 
+                                Text="{Binding VolumeLabel}" 
+                                TextColor="Black" 
+                                Style="{StaticResource labelStyle}"/>
+                            <Label 
+                                Text="{Binding TotalSize}" 
+                                TextColor="DimGray" 
+                                Style="{StaticResource labelStyle}"/>
+
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

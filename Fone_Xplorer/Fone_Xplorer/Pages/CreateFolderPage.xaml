@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fone_Xplorer.Pages.CreateFolderPage">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10">
+            <Entry 
+                x:Name="folderName" 
+                Placeholder="folder name"
+                Margin="0, 10, 0, 40"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            
+            <Button 
+                Text="Create Folder" 
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

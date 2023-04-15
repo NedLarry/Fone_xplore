@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fone_Xplorer.Pages.CreateTextFilePage">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10">
+
+            <Entry 
+                x:Name="fileNameLbl" 
+                Placeholder="file name"
+                Keyboard="Text"
+                HorizontalOptions="Center"
+                BackgroundColor="Green"/>
+
+            <Editor
+                x:Name="fileContents"
+                Placeholder="contents"
+                Keyboard="Text"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Yellow"/>
+
+            <Button 
+                Text="Create file"
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
