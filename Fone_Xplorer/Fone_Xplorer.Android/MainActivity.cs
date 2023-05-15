@@ -19,10 +19,18 @@ namespace Fone_Xplorer.Droid
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
             {
-                if (!(CheckPermissionGranted(Manifest.Permission.ReadExternalStorage) && !CheckPermissionGranted(Manifest.Permission.WriteExternalStorage)))
+                if (!(CheckPermissionGranted(Manifest.Permission.ReadExternalStorage) 
+                    && !CheckPermissionGranted(Manifest.Permission.WriteExternalStorage)))
                 {
                     RequestPermission();
                 }
+
+                //if (!(CheckPermissionGranted(Manifest.Permission.ReadExternalStorage)
+                //    && !CheckPermissionGranted(Manifest.Permission.WriteExternalStorage)
+                //    && !CheckPermissionGranted(Manifest.Permission.ManageExternalStorage)))
+                //{
+                //    RequestPermission();
+                //}
             }
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
@@ -41,7 +49,12 @@ namespace Fone_Xplorer.Droid
 
         private void RequestPermission()
         {
-            ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage, Manifest.Permission.WriteExternalStorage }, 0);
+            ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage, 
+                Manifest.Permission.WriteExternalStorage, }, 0);
+
+            //ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage,
+            //    Manifest.Permission.WriteExternalStorage,
+            //    Manifest.Permission.ManageExternalStorage }, 0);
         }
 
         public bool CheckPermissionGranted(string Permissions)

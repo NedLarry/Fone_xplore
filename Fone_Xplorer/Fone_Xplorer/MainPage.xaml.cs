@@ -41,7 +41,7 @@ namespace Fone_Xplorer
 
             foreach(var drive in DriveInfo.GetDrives())
             {
-                if (drive.DriveType != DriveType.Ram) continue;
+                //if (drive.DriveType != DriveType.Ram) continue;
 
                 if (drive.VolumeLabel.Contains("emulated")) continue;
 

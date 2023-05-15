@@ -4,27 +4,50 @@
              x:Class="Fone_Xplorer.Pages.CreateTextFilePage">
     <ContentPage.Content>
         <StackLayout
-            Padding="10">
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="FillAndExpand">
 
-            <Entry 
-                x:Name="fileNameLbl" 
-                Placeholder="file name"
-                Keyboard="Text"
-                HorizontalOptions="Center"
-                BackgroundColor="Green"/>
 
-            <Editor
-                x:Name="fileContents"
-                Placeholder="contents"
-                Keyboard="Text"
+            <StackLayout
                 HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                BackgroundColor="Yellow"/>
+                VerticalOptions="FillAndExpand"
+                Padding="10">
+
+
+                <Entry 
+                    x:Name="fileNameLbl" 
+                    Placeholder="file name"
+                    Keyboard="Text"
+                    WidthRequest="500"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    Margin="0, 25, 0, 15"/>
+
+                <Editor
+                    x:Name="fileContents"
+                    Placeholder="contents"
+                    Keyboard="Plain"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    TextColor="Black"
+                    WidthRequest="500"/>
+
+                <Button 
+                    Text="Create file"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Margin="0, 15, 0, 10"/>
+
+            </StackLayout>
+
+
 
             <Button 
-                Text="Create file"
+                Text="Back"
+                Clicked="backBtnClicked"
                 HorizontalOptions="Center"
-                VerticalOptions="End"/>
+                VerticalOptions="End"
+                Margin="0, 50, 0, 10"/>
 
         </StackLayout>
     </ContentPage.Content>

@@ -40,11 +40,11 @@ namespace Fone_Xplorer.Pages
 			switch (response)
 			{
 				case "Create Folder":
-					CreateNewFolder();
+					CreateNewFolder(DirectoryToView);
 				break;
 
                 case "Create Text File":
-                    CreateNewTextFile();
+                    CreateNewTextFile(DirectoryToView);
 				break;
 
             }
@@ -63,8 +63,13 @@ namespace Fone_Xplorer.Pages
 
 			FoldersInDirectory.ForEach(folder =>
 			{
+
+				folder.Attributes = FileAttributes.Normal | FileAttributes.Directory;
+
 				directoryContents.Add(new FileFolderView
 				{
+
+
 					Name = folder.Name,
 					isFolder = true,
 					SubDirectories = folder.GetDirectories(),
@@ -88,14 +93,14 @@ namespace Fone_Xplorer.Pages
 			return directoryContents;
 		}
 
-		async void CreateNewFolder()
+		async void CreateNewFolder(DirectoryInfo currentDirectory)
 		{
-			await Navigation.PushModalAsync(new CreateFolderPage());
+			await Navigation.PushModalAsync(new CreateFolderPage(currentDirectory));
 		}
 
-        async void CreateNewTextFile()
+        async void CreateNewTextFile(DirectoryInfo currentDirectory)
         {
-			await Navigation.PushModalAsync(new CreateTextFilePage());
+			await Navigation.PushModalAsync(new CreateTextFilePage(currentDirectory));
         }
     }
 }
